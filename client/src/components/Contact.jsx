@@ -4,7 +4,7 @@ import { Check, LoaderCircle, Send } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL || "/api";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -34,7 +34,7 @@ const Contact = () => {
     try {
   
 
-      const response = await fetch(`${API_URL}/api/contact`, {
+      const response = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
